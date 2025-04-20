@@ -1,11 +1,12 @@
-import { StyleSheet, Text, View } from "react-native"
+import { Image, StyleSheet, Text, View } from "react-native"
 
 const App = () => {
   return (
     <View style={styles.container}>
       <Text style={styles.text}>
-        This is my native App
+        This is my native boilerPlate
       </Text>
+      <Image source={require('./Components/Images/imag.jpg')} style={styles.image} />
     </View>
   )
 }
@@ -18,11 +19,17 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
-    backgroundColor: "yellow",
+    backgroundColor: "white",
   },
   text: {
     fontSize: 20,
-    color: "#333",
-
-  }
+    textAlign: "center",
+    color: "blue",
+    fontWeight: "900"
+  },
+  image: {
+    width: 200,
+    height: 200,
+    resizeMode: 'cover', // or 'cover', 'stretch', etc.
+  },
 })
