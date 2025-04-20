@@ -1,12 +1,18 @@
-import { Image, StyleSheet, Text, View } from "react-native"
-
+import { Alert, Image, StyleSheet, Text, View } from "react-native"
+import MyButton from './Components/Button/Button';
 const App = () => {
+  const clickMe = () => {
+    Alert.alert('Alert', 'You clicked me');
+    console.log("Button Clicked");
+
+  }
   return (
     <View style={styles.container}>
       <Text style={styles.text}>
         This is my native boilerPlate
       </Text>
       <Image source={require('./Components/Images/imag.jpg')} style={styles.image} />
+      <MyButton onPress={() => clickMe()} title='Order Now' />
     </View>
   )
 }
