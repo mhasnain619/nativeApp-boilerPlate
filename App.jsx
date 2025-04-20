@@ -1,15 +1,17 @@
-import { Alert, Image, StyleSheet, Text, View } from "react-native"
+import { Alert, Image, StatusBar, StyleSheet, Text, View } from "react-native"
 import MyButton from './Components/Button/Button';
+import { useState } from "react";
 const App = () => {
+  const [count, setCount] = useState(0);
   const clickMe = () => {
-    Alert.alert('Alert', 'You clicked me');
-    console.log("Button Clicked");
+    setCount(count + 1);
 
   }
   return (
     <View style={styles.container}>
+      <StatusBar backgroundColor='aqua' />
       <Text style={styles.text}>
-        This is my native boilerPlate
+        {count}
       </Text>
       <Image source={require('./Components/Images/imag.jpg')} style={styles.image} />
       <MyButton onPress={() => clickMe()} title='Order Now' />
@@ -35,7 +37,7 @@ const styles = StyleSheet.create({
   },
   image: {
     width: 200,
-    height: 200,
-    resizeMode: 'cover', // or 'cover', 'stretch', etc.
+    height: 400,
+    resizeMode: "stretch",
   },
 })
